@@ -105,9 +105,11 @@ public class StorageController {
         try {
             file = GifticonImageUtil.convertMultipartFileToFile(imageFile);
 
-            if (!GifticonImageUtil.isInvalidFileExtension(file)) {
-                throw new NotValidFileExtensionException();
-            }
+//            if (!GifticonImageUtil.isInvalidFileExtension(file)) {
+//                throw new NotValidFileExtensionException();
+//            }
+            // TODO : checkFileExt 테스트
+            GifticonImageUtil.checkFileExtension(file);
             GifticonDto gifticonDto = ocrService.readOcr(file); // 파일
 
             if (gifticonDto.getDue() != null) {

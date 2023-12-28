@@ -125,6 +125,12 @@ public class GifticonImageUtil {
     }
 
 
-
-
+    public static void checkFileExtension(File file) {
+        if (file == null){
+            throw new NullPointerException();
+        }
+        if (!isInvalidFileExtension(file)){
+            throw new NotValidFileExtensionException();
+        }
+    }
 }
